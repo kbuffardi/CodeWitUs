@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    "login", :media => "all" %>
+        <title>CodeWitUs Login</title>
+</head>
+
+<body>
+
+    <div class="container p-5">
+
+        <div class="row">
+            <div class="col-6 mt-5 text-center">
+
+                <%= image_tag "login.jpg", :class => "login-image " %>
+            </div>
+            <div class="col-6">
+
+                <form action="/user/register" method="post">
+                    <div class="form-row">
+
+                        <h2 class="mb-5">
+                            Sign Up
+                        </h2>
+                        <div class="form-group col-12">
+                            <label for="inputName">Full Name</label>
+                            <input type="text" class="form-control" id="inputName" name="name" placeholder="Enter Full Name">
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="inputUsername">Username</label>
+                            <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Enter Username">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Enter Email Address">
+                            <small class="form-text text-muted" id="emailHelp">Use your Wildcat email account</small>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Password">
+                        </div>
+
+                        <div class="form-group col-md-12 text-right mt-3">
+                            <button type="submit" class="btn btn-outline-primary w-100"> Sign in</button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-6 text-right mt-3">
+
+                        <%= button_to " Log In With Google", '/auth/google_oauth2',  {class: 'btn btn-primary w-100'} %>
+
+
+                    </div>
+
+
+                    <div class="form-group col-md-6 text-right mt-3">
+                        <button type="submit" class="btn btn-secondary w-100"> 
+                        Login With GitHub</button>
+
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- <hr> -->
+
+
+    </div>
+
+
+
+</body>
+
+</html>
