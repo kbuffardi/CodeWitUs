@@ -4,11 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    "login", :media => "all" %>
+        <title>CodeWitUs Login</title>
 </head>
 
 <body>
-    Home
+
+    <div class="container p-5">
+
+        <div class="row">
+            <div class="col-6 mt-3 text-center">
+
+                <%= image_tag "hello.jpg", :class => "login-image " %>
+            </div>
+            <div class="col-6">
+
+                <div class="form-row">
+
+
+                    <h2 class="mb-5">
+                        Welcome
+                        <%= @user %>!
+
+                    </h2>
+
+
+                    <div class=" col-12">
+                        <label class="font-weight-normal">Email: </label>
+                        <span class="text-secondary">
+
+                        <%= @uData.email  %>!
+                            </span>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <!-- <hr> -->
+
+
+    </div>
+
+
+
 </body>
 
 </html>
