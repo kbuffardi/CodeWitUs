@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
             u.password_digest = SecureRandom.hex(16)
         end
         if user.valid?
-            session[:user_id] = user.username
+            session[:user_id] = user.id
             redirect_to  :controller => 'user', :action => 'home'
         end
     end

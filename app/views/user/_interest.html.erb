@@ -1,0 +1,47 @@
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content card">
+                                    <div class="card-header">
+                                        Get Started..
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary">Welcome Onboard! </h5>
+                                        <p class="card-text">
+
+                                        </p>
+
+                                        <form action="/user/register" method="post">
+                                            <div class="form-row">
+
+                                                <div class="form-group col-12">
+                                                    <label for="inputUsername">What is your area of Interest?</label>
+                                                    <input type="text" class="form-control" id="inputUsername" autocomplete="off" name="username" placeholder="Search for your area of Interest.">
+                                                    <div class="searchDropdown" style="width:90%; height:300px; background-color:#fff;border:1px solid #d3d3d3;position:absolute;box-shadow: 0px 8px 9px -6px rgba(0,0,0,0.75); 
+display:none; ">
+                                                    </div>
+                                                    <div class="mt-3">
+
+                                                        <%# <a href="#" class="btn btn-outline-primary mb-1">Machine Learning</a>
+                                                        <a href="#" class="btn btn-outline-primary mb-1">Artificial Intelligence</a>
+                                                        <a href="#" class="btn btn-outline-primary mb-1"> Data Science</a>
+                                                        <a href="#" class="btn btn-outline-primary mb-1">Compiler Optimization</a>
+                                                        <a href="#" class="btn btn-outline-primary mb-1">Algorithms</a>
+                                                        <a href="#" class="btn btn-outline-primary mb-1">Networking</a>
+                                                        <a href="#" class="btn btn-outline-primary mb-1">Web Developemet</a>
+                                                        <a href="#" class="btn btn-outline-primary mb-1">App Developemet</a> %>
+
+
+            <% @interestData.each do |int| %>
+            <a href="#" class="btn btn-outline-primary mb-1"> <%= int.interest_name %></a>
+            <% end %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+                                        <!-- <a href="#" class="btn btn-outline-primary">Close</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>

@@ -11,6 +11,10 @@ class UserController < ApplicationController
             redirect_to  :controller => 'user', :action => 'userError'
         
         elsif User.exists?(email: params[:email])
+            
+            redirect_to  :controller => 'user', :action => 'error'
+        
+        elsif(params[:password].length<12)
             redirect_to  :controller => 'user', :action => 'error'
         
         else
@@ -18,7 +22,7 @@ class UserController < ApplicationController
                 u.username = params[:username]
                 u.email= params[:email]
                 u.role= 0
-                u.password_digest = params[:password]
+                u.password_digest = BCrypt::Password.create(params[:password])
             end
 
             if user.valid?
@@ -61,8 +65,8 @@ class UserController < ApplicationController
         
         else
             @user = session[:user_id] 
-            @uData = User.find_by(username: @user )
-
+            @uData = User.find_by(id: @user )
+            @interestData = Interest.all()
             render template:'user/home'
         end
     end

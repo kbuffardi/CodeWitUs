@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "error" => "user#error"
   get "userError" => "user#userError"
   get "logout" => "user#logout"
+  get "interest" => "api#getInterest"
 
 
   post 'user/register' => "user#register"
