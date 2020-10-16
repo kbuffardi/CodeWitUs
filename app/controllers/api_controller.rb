@@ -1,6 +1,8 @@
 class ApiController < ApplicationController
+    protect_from_forgery with: :null_session
+
     def getInterest
-        if request.get? 
+        if request.post? 
             search= params[:search]
 
             @interestData = Interest.where("interest_name like ?","%#{search}%")

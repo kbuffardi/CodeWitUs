@@ -10,21 +10,54 @@
 
         <script>
             $(document).ready(function() {
+                $(document).mouseup(function(e) {
+                    var container = $(".searchDropdown");
+                    if (!container.is(e.target) && container.has(e.target).length === 0) {
+                        container.hide();
+                    }
+                });
 
                 function sendPost(urlX, paramX) {
                     $.ajax({
-                        type: "GET",
+                        type: "POST",
                         url: urlX,
                         data: {
                             "search": paramX
                         },
                         success: function(data) {
-                            console.log(data);
+
+                            $('.searchDropdown').show();
+                            $('.list-group').html('');
+
+                            for (i = 0; i < data.length; i++) {
+                                console.log(data[i]);
+
+                                $('.list-group').append('<li class="list-group-item" style="cursor:pointer;" id="' + data[i].id + '">' + data[i].interest_name + '</li>');
+
+                            }
+
+                            $('.list-group').append('<li class="list-group-item" style="cursor:pointer;" id="NoVal">' + paramX + '</li>');
+
                         }
                     });
                 }
 
+                $(document).on('click', '.list-group-item', function() {
+                    var id = $(this).attr("id");
+                    $('.searchDropdown').hide();
 
+                    if (id != "NoVal") {
+                        if ($("#Intr" + id).length != 0) {
+                            $("#Intr" + id).attr("class", "btn btn-primary mb-1");
+                        }
+                    } else {
+                        var newIntr = $(this).html();
+
+                        $('.interest-buttons').append('<a href="#" class="btn btn-primary mb-1 mr-1" id="NoVal"> ' + newIntr + '</a>');
+
+                    }
+
+                });
 
                 $('.modal').modal('show');
 
@@ -32,10 +65,9 @@
                     var val = $(this).val();
                     sendPost("http://localhost:3000/interest", val);
 
-
-                    if (e.key === 'Enter' || e.keyCode === 13) {
-                        // Do something
-                    }
+                    // if (e.key === 'Enter' || e.keyCode === 13) {
+                    //     $('searchDropdown').hide();
+                    // }
                 });
             });
         </script>
