@@ -36,12 +36,7 @@
 > Database
 - MYSQL Ver 8.0.21
 
-## OAuth API 
-> Google OAuth
-- Create a .env file in the root directory of your app.
--  Add the following code to the file.
-`GOOGLE_CLIENT_ID=Your client id  `
-`GOOGLE_CLIENT_SECRET=Your client secret`
+
 
 ## Installation
 
@@ -55,6 +50,15 @@
 $ cd CodeWitUs
 ```
 
+### Set Google OAuth API Credentials
+
+> Google OAuth
+- Create a .env file in the root directory of your app.
+-  Add the following code to the file.
+`GOOGLE_CLIENT_ID=Your client id  `
+`GOOGLE_CLIENT_SECRET=Your client secret`
+
+
 ### Setup
 
 > Now Install all project requirements
@@ -65,6 +69,11 @@ $ bundle install
 > Now create database, migrate database
 
 > Make changes in `config/database.yml` file and set your SQL database credentials.
+
+
+```shell
+$ rails db:create
+```
 
 ```shell
 $ rails db:migrate
@@ -80,7 +89,7 @@ $ rails s
 > Brower
 
 ```shell
-  http://localhost:3000/
+  http://localhost:3000/login
 ```
 
 
