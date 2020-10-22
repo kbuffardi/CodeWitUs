@@ -54,9 +54,9 @@ $ cd CodeWitUs
 
 > Google OAuth
 - Create a .env file in the root directory of your app.
--  Add the following code to the file.
-`GOOGLE_CLIENT_ID=Your client id  `
-`GOOGLE_CLIENT_SECRET=Your client secret`
+-  Add the following code to the file. <br />
+`GOOGLE_CLIENT_ID=Your client id  `<br />
+`GOOGLE_CLIENT_SECRET=Your client secret`<br />
 
 
 ### Setup
