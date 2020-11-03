@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post "newinterest" => "api#newInterest"
   post "clearinterest" => "api#clearInterest"
   post "insertinterest" => "api#insertInterest"
-
+  get "/" => "application#home"
   
 
   post 'user/register' => "user#register"

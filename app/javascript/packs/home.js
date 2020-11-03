@@ -3,6 +3,16 @@ var interest = [];
 
 $(document).ready(function() {
 
+
+    $(document).on('click', '.registerBtn', function() {
+        $('#LoginModal').modal('show');
+    });
+
+    // $("#LoginModal").on("hidden.bs.modal", function() {
+    //     $('#InterestModal').modal('show');
+    // });
+
+
     function errorAlert() {
         $('.interestWarning').show();
     }
@@ -129,7 +139,6 @@ $(document).ready(function() {
 
     });
 
-    $('.modal').modal('show');
 
     $("#inputUsername").on('keyup', function(e) {
         var val = $(this).val();

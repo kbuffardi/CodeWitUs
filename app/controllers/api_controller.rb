@@ -26,7 +26,8 @@ class ApiController < ApplicationController
                 response.to_json
                 render json: JSON.pretty_generate(response.as_json)
             else    
-                response = {:resp => "success"}
+                newIntr = Interest.find_or_create_by(interest_name: search)
+                response = {:resp => newIntr.id}
                 response.to_json
                 render json: JSON.pretty_generate(response.as_json)            
             end
