@@ -1,0 +1,39 @@
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content card">
+                                 
+                                    <div class="card-body">
+                                        <h2 class="card-title ">Customize your learning... </h2>
+                                        <p class="card-text">
+
+                                        </p>
+
+                                            <div class="form-row">
+
+                                                <div class="form-group col-12">
+                                                    <label for="inputUsername">What is your area of Interest?</label>
+                                                    <input type="text" class="form-control" id="inputUsername" autocomplete="off" name="username" placeholder="Search for your area of Interest.">
+                                                    <div class="searchDropdown" style="width:90%; height:300px; background-color:#fff;border:1px solid #d3d3d3;position:absolute;box-shadow: 0px 8px 9px -6px rgba(0,0,0,0.75); 
+display:none; ">
+<ul class="list-group">
+
+</ul>
+                                                    </div>
+                                                    <div class="mt-3 interest-buttons">
+
+                                                     
+
+
+            <% @interestData.each do |int| %>
+            <a href="#" class="btn btn-outline-primary mb-1" id="Intr<%= int.id %>"> <%= int.interest_name %></a>
+            <% end %>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        <!-- <a href="#" class="btn btn-outline-primary">Close</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>

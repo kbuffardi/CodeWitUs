@@ -1,142 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="author" content="">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag "application.css" %>
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    "login", :media => "all" %>
+        <title>CodeWitUs Login</title>
 
 
-
-
-        <style type="text/css" media="screen">
-            #editor {
-                position: absolute;
-                top: 8em;
-                right: 0;
-                bottom: 0;
-                left: 0;
-            }
-        </style>
-
+        <%= javascript_pack_tag 'interest' %>
 
 </head>
 
 <body>
-    <div class="p-3">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="">
-                    <h1>Video #
+    <%= render "layouts/header" %>
 
-                    </h1>
-                    <p>Video Title</p>
+        <div class="">
 
-                    <iframe id="player" src="https://www.youtube.com/embed/XKu_SEDAykw?enablejsapi=1" style="width:100%; height:500px;"></iframe>
-                    <h5>Record of user actions:</h5>
+            <div class="row">
+
+                <div class="" style="resize: horizontal;overflow: hidden; width:70%; min-width: 55%; max-width: 70%;">
 
 
+                    <iframe id=" player " src="https://www.youtube.com/embed/XKu_SEDAykw?enablejsapi=1 " style="width:100%; height:35em; "></iframe>
 
+                    <div class="row m-3">
+                        <div class="col-8 pl-4">
+
+                            <h1 class="font-weight-bold ">
+                                Lorem Ipsum with if statements
+                            </h1>
+
+                            <div class="form-row ">
+
+                                <div class="form-group col-md-2 text-right mt-3 ">
+                                    <button type="submit " class="btn btn-outline-primary w-100 "> Concept</button>
+                                </div>
+
+                                <div class="form-group col-md-2 text-right mt-3 ">
+                                    <button type="submit " class="btn btn-outline-primary w-100 "> Concept</button>
+                                </div>
+
+                                <div class="form-group col-md-2 text-right mt-3 ">
+                                    <button type="submit " class="btn btn-outline-primary w-100 "> Interest</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 p-2 text-center">
+                            <div class="bg-primary text-center p-2" style="opacity: .5; border-radius: .5em;">
+                                <i class="fas fa-share-alt text-white"></i>
+                                <span class="text-white ml-2"> Share</span>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2 text-center">
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcE3npkkIN-Ds9L3z3zbB97kwtOlq9jjJ2lQ&usqp=CAU" style="width: 5em;">
+                            <h6 class="mt-2">CodeWit <u>Destiny</u></h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class=" " style="resize: horizontal;overflow: hidden; width:30%; min-width: 20%; max-width: 30%;">
+
+                    <iframe id="codeworkout " src=" " style="height:100%; width:100%;background-color: #f9f9f9; "></iframe>
 
 
                 </div>
-                <hr>
-
-                </h2>
-                <textarea style="width: 100%;height:10em;"></textarea>
 
             </div>
 
+            <!-- <hr> -->
 
-        </div>
-        <div class="col-md-6">
-            <h1>IDE #
-
-            </h1>
-            <p>Exercise Title</p>
-            <!-- <textarea style="width: 100%;height: 76%;"></textarea> -->
-
-            <div id="editor">
-                /****************************************************************************** Code With Us Online C++ Compiler. *******************************************************************************/ #include&lt;iostream&gt; using namespace std; int main()
-                { cout
-                << "Hello World"; return 0; } </div>
-                    <script src="https://pagecdn.io/lib/ace/1.4.12/ace.min.js" crossorigin="anonymous" integrity="sha256-T5QdmsCQO5z8tBAXMrCZ4f3RX8wVdiA0Fu17FGnU1vU="></script>
-                    <script src="https://pagecdn.io/lib/ace/1.4.12/theme-twilight.min.js" crossorigin="anonymous"></script>
-                    <script src="https://pagecdn.io/lib/ace/1.4.12/mode-c_cpp.min.js" crossorigin="anonymous"></script>
-                    <script>
-                        var editor = ace.edit("editor");
-                        editor.setTheme("ace/theme/twilight");
-                        editor.session.setMode("ace/mode/c_cpp");
-                    </script>
-            </div>
 
         </div>
 
 
-    </div>
-
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        var player;
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                events: {
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerStateChange(event) {
-            switch (event.data) {
-                case -1:
-                    console.log('video Started' + player.getCurrentTime());
-                    console.log(Date());
-
-                    // record('video Started' + player.getCurrentTime());
-                    break;
-                case 0:
-                    console.log('video ended');
-                    console.log(Date());
-
-                    // record('video ended');
-                    break;
-                case 1:
-                    console.log('video playing from ' + player.getCurrentTime());
-                    console.log(Date());
-
-                    // record('video playing from ' + player.getCurrentTime());
-                    break;
-                case 2:
-                    console.log('video paused at ' + player.getCurrentTime());
-                    console.log(Date());
-
-                    // record('video paused at ' + player.getCurrentTime());
-                    break;
-                    // case 3:
-                    //     record('video buffered ' + player.getCurrentTime());
-                    //     break;
-            }
-        }
-
-        function record(data) {
-            // Do what you want with your data
-            var p = document.createElement("p");
-            p.appendChild(document.createTextNode(data));
-            document.body.appendChild(p);
-        }
-    </script>
 
 </body>
 

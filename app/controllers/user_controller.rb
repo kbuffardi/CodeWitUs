@@ -66,7 +66,7 @@ class UserController < ApplicationController
         else
             @user = session[:user_id] 
             @uData = User.find_by(id: @user )
-            @interestData = Interest.all()
+            @interestData = Interest.order("interest_count DESC").limit(15)
             render template:'user/home'
         end
     end

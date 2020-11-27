@@ -1,0 +1,45 @@
+<div class="modal fade bd-example-modal-lg" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content card">
+
+            <div class="card-body">
+
+                <div class="p-5">
+                    <div class="progress mt-3 mb-3">
+                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                            50% Complete
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3 ">
+                        </div>
+                        <div class="col-7 text-left ">
+
+
+                            <h2 class="mt-3">Activate your account</h2>
+
+                            <div class="text-left mb-5">
+                                <li>No new password necessary</li>
+                                <li>Just login with your school's Google account</li>
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="col-1 ">
+                        </div>
+                    </div>
+
+                    <%= button_to " Log In With Google", '/auth/google_oauth2',  {class: 'btn btn-outline-primary mt-5 w-100'} %>
+
+                </div>
+
+
+                <!-- <a href="# " class="btn btn-outline-primary ">Close</a> -->
+            </div>
+        </div>
+    </div>
+</div>
