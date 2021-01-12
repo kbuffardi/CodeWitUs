@@ -8,7 +8,7 @@
 > Back-End
 
 - Ruby on Rails
-- MySQL
+- postgres
 
 > Front-End
 
@@ -25,14 +25,14 @@
 > Rails and GEM
 
 - Rails version             6.0.3.3
-- Ruby version              ruby 2.7.0
+- Ruby version              2.7.0
 - RubyGems version          3.1.4
 - Rack version              2.2.3
-- Database Adapter          mysql2
-- Omniauth-google-oauth2 (0.8.0)
+- Database Adapter          postgresql
+- Omniauth-google-oauth2    0.8.0
 
 > Database
-- MYSQL Ver 8.0.21
+- PostgreSQL (8.4+) via pg (0.18.4) gem
 
 
 
