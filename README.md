@@ -97,22 +97,31 @@ $ rails s
 
 ### DevOps configuration
 
-Within the `codewitus` project directory, give the ownership to the current user:
-
-`sudo chown -R $USER:$USER .`
-
-Then update the Spring configuration to ensure installation of Bundler 2.1.4 within
+First update the Spring configuration to ensure installation of Bundler 2.1.4 within
 the Docker containers: `vim bin/spring`
 
-```
+```shell
 unless defined?(Spring)
   gem 'bundler', '2.1.4' #Fix Docker use of 2.1.2, via: https://github.com/rubygems/rubygems/issues/3257
 ```
 
-Build the rails web server image: `docker build . -t cw-rails`
+#### Initialize
 
-Followed by building the Compose image that links the web server with the database:
-`docker-compose build`
+Build the Compose image that links the web server with the database:
+```shell
+docker-compose build
+````
+
+####
+
+Launching locally:
+
+```shell
+docker-compose up
+```
+
+And then visit the [local server in your web browser](http://0.0.0.0:3000
+).
 
 ## Contributing
 
