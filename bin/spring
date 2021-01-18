@@ -4,6 +4,7 @@
 # It gets overwritten when you run the `spring binstub` command.
 
 unless defined?(Spring)
+  gem 'bundler', '2.1.4' #Fix Docker use of 2.1.2, via: https://github.com/rubygems/rubygems/issues/3257
   require 'rubygems'
   require 'bundler'
 

@@ -2,17 +2,18 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: <%= ENV['DB_NAME'] %>
-  username: <%= ENV['DB_USER'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOST'] %>
+  username: postgres
+  password: cw_db_password
+  host: db
 
 development:
   <<: *default
+  database: codewit_development
 
 test:
   <<: *default
-  databse: test_db
+  database: codewit_test
 
 production:
   <<: *default
+  database: codewit_test

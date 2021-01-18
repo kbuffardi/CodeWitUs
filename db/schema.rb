@@ -12,27 +12,30 @@
 
 ActiveRecord::Schema.define(version: 2020_11_20_092845) do
 
-  create_table "interests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "interests", force: :cascade do |t|
     t.string "interest_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "interest_count", default: 0
   end
 
-  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "roles", force: :cascade do |t|
     t.string "role_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_interests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "user_interests", force: :cascade do |t|
     t.integer "userId"
     t.integer "interestId"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "username"
     t.integer "role"
@@ -47,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_11_20_092845) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "videos", force: :cascade do |t|
     t.string "user"
     t.string "video_id"
     t.datetime "created_at", precision: 6, null: false

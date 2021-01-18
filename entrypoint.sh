@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-# Remove a potentially pre-existing server.pid for Rails.
+# Remove a potentially pre-existing .pid for Rails and Postgres
 rm -f /codewit/tmp/pids/server.pid
+rm -f /usr/local/var/postgres/postmaster.pid
 
 # Set up database
 rails db:create

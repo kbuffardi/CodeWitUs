@@ -34,6 +34,11 @@
 > Database
 - PostgreSQL (8.4+) via pg (0.18.4) gem
 
+> DevOps
+
+- Docker  20.10.0
+- Docker Compose 1.27.4
+
 
 
 ## Installation
@@ -57,7 +62,7 @@ $ cd CodeWitUs
 `GOOGLE_CLIENT_SECRET=Your client secret`<br />
 
 
-### Setup
+### Manual Setup
 
 > Now Install all project requirements
 ```shell
@@ -90,6 +95,24 @@ $ rails s
   http://localhost:3000/login
 ```
 
+### DevOps configuration
+
+Within the `codewitus` project directory, give the ownership to the current user:
+
+`sudo chown -R $USER:$USER .`
+
+Then update the Spring configuration to ensure installation of Bundler 2.1.4 within
+the Docker containers: `vim bin/spring`
+
+```
+unless defined?(Spring)
+  gem 'bundler', '2.1.4' #Fix Docker use of 2.1.2, via: https://github.com/rubygems/rubygems/issues/3257
+```
+
+Build the rails web server image: `docker build . -t cw-rails`
+
+Followed by building the Compose image that links the web server with the database:
+`docker-compose build`
 
 ## Contributing
 
