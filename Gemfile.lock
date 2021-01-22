@@ -244,7 +244,7 @@ DEPENDENCIES
   listen (~> 3.2)
   omniauth
   omniauth-google-oauth2
-  omniauth-rails_csrf_protection
+  omniauth-rails_csrf_protection (~> 0.1)
   pg (~> 0.18.4)
   pry
   puma (~> 4.1)
