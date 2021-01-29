@@ -3,6 +3,9 @@ class UserController < ApplicationController
     protect_from_forgery with: :null_session
 
     def register
+
+
+
         # @videos = Video.all
         params.permit(:name, :username, :email, :password)
         puts params.inspect
@@ -47,6 +50,12 @@ class UserController < ApplicationController
 
     def login
         # @videos = Video.all
+        
+        if (session[:user_id] != nil)
+            home
+            return false
+        end
+
         render template:'user/login'
     end
 
@@ -61,15 +70,18 @@ class UserController < ApplicationController
 
 
     def home
+        
+
         if session[:user_id] == nil
             render template:'user/login'
-        
-        else
-            @user = session[:user_id] 
-            @uData = User.find_by(id: @user )
-            @interestData = Interest.order("interest_count DESC").limit(15)
-            render template:'user/home'
+            return false
         end
+
+        @user = session[:user_id] 
+        @uData = User.find_by(id: @user )
+        @interestData = Interest.order("interest_count DESC").limit(15)
+        render template:'user/home'
+        
     end
     
   

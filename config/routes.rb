@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :video
 
   get 'auth/:provider/callback', to: 'sessions#omniauth'
-  get 'auth/failure', to: redirect('/')
+  # get 'auth/failure', to: redirect('/login')
 
 
 end

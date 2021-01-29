@@ -10,6 +10,12 @@ class VideoController < ApplicationController
     end
 
     def index
+
+        if session[:user_id] == nil
+            render template:'user/login'
+            return false
+        end
+        
         # @videos = Video.all
         @user = session[:user_id] 
         @uData = User.find_by(id: @user )
@@ -19,6 +25,13 @@ class VideoController < ApplicationController
 
 
     def home
+
+
+        if session[:user_id] == nil
+            render template:'user/login'
+            return false
+        end
+        
         if params[:id] 
             @vid = params[:id] 
             @user = session[:user_id] 
