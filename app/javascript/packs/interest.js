@@ -3,6 +3,7 @@ var interest = [];
 
 $(document).ready(function() {
 
+
     function errorAlert() {
         $('.interestWarning').show();
     }

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   post "clearinterest" => "api#clearInterest"
   post "insertinterest" => "api#insertInterest"
   get "/" => "application#home"
+  post "newVideo" => "api#newVideo"
+  post "like" => "api#like"
+
   
 
   post 'user/register' => "user#register"
