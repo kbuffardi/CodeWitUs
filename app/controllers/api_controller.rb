@@ -100,6 +100,17 @@ class ApiController < ApplicationController
         end
     end
 
+    def insertConcept
+        if request.post? 
+            interest_new = Concept.find_or_create_by(name: params[:keyword]) do |u|
+                u.name= params[:keyword]
+            end
+            
+            response = {:resp => "success"}
+            response.to_json
+            render json: JSON.pretty_generate(response.as_json)               
+        end
+    end
 
     def like
        
