@@ -22,7 +22,20 @@ class VideoController < ApplicationController
         render template:'video/index'
     end
 
+    def list
+        if session[:user_id] == nil
+            render template:'user/login'
+            return false
+        end
 
+        @user = session[:user_id] 
+        @uData = User.find_by(id: @user )
+        @vData = Video.all()
+
+        render template:'video/list'
+
+
+    end
 
     def home
 

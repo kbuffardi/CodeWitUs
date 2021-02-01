@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    "login", :media => "all" %>
+        <title>CodeWitUs Login</title>
+
+
+        <%= javascript_pack_tag 'interest' %>
+            <%= javascript_pack_tag 'video_home' %>
+
+</head>
+
+<body>
+    <%= render "layouts/header" %>
+
+        <div class="">
+
+            <h1 class="text-center mt-3"> Tutorials</h1>
+            <div class="row m-5">
+
+                <% @vData.first(10).each do |video| %>
+                    <div class="col-3">
+                        <a href="/video/home?id=<%= video.id %>">
+                            <div class="card m-3">
+                                <img class="card-img-top" src="https://img.youtube.com/vi/<%= video.video_id[29..] %>/mqdefault.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= video.vtitle.sub(/\w/, &:capitalize) %>
+                                    </h5>
+                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"> <a href="/video/home?id=<%= video.id %>" class="card-link">Tutorial Link</a></li>
+                                    <!-- <li class="list-group-item">Cras justo odio</li> -->
+                                    <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Vestibulum at eros</li> -->
+                                </ul>
+
+                                <!-- <div class="card-body">
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div> -->
+                            </div>
+                        </a>
+
+
+                    </div>
+                    <% end %>
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+</body>
+
+</html>

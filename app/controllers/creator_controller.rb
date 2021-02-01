@@ -12,8 +12,9 @@ class CreatorController < ApplicationController
 
         @user = session[:user_id] 
         @uData = User.find_by(id: @user )
-        puts "Testing"
-        puts @uData.role
+        @interestData = Interest.order("interest_count DESC").limit(15)
+        @conceptData = Concept.order("id DESC").limit(15)
+
         if @uData.role == 1
             render template:'creator/add'
         else

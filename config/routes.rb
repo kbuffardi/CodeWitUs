@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "creator/add" => "creator#add"
   post "creator/add" => "creator#addTutorial"
   
+  get 'tutorials' => "video#list"
 
   post 'user/register' => "user#register"
 

@@ -29,8 +29,8 @@
 
 
                         <h2 class="mb-5">
-                            Welcome
-                            <%= @uData.username %>!
+                            Create Tutorial
+
 
                         </h2>
 
@@ -58,23 +58,46 @@
                                         <label for="exampleFormControlInput1">Youtube Link</label>
                                         <input name="ytlink" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Youtube Link">
                                     </div>
-
+                                    <!-- 
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Concepts</label>
                                         <input name="concepts" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Concepts">
-                                    </div>
+                                    </div> -->
+
 
                                     <div class="form-group">
-                                        <label for="exampleFormControlInput1">Interest</label>
-                                        <input name="interest" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Interest">
+                                        <label for="exampleFormControlSelect1">Interest</label>
+                                        <select name="interest" class="form-control" id="exampleFormControlSelect1">
+                                            <% @conceptData.each do |int| %>
+                                            <option value="<%= int.id %>">
+                                                <%= int.name.sub(/\w/, &:capitalize) %>
+                                            </option>     
+                                            <% end %>
+                                        </select>
                                     </div>
+
+
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Interest</label>
+                                        <select name="interest" class="form-control" id="exampleFormControlSelect1">
+                                            <% @interestData.each do |int| %>
+                                            <option value="<%= int.id %>">
+                                                <%= int.interest_name.sub(/\w/, &:capitalize) %>
+                                            </option>     
+                                            <% end %>
+                                        </select>
+                                    </div>
+
+
+
 
                                     <div class="form-group">
                                         <label for="exampleFormControlInput1">Codeworkout Link</label>
                                         <input name="cwlink" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Codeworkout Link">
                                     </div>
 
-                                    <input type="submit" value="Upload" class="btn btn-primary col-12">
+                                    <input type="submit" value="Upload" class="btn btn-primary col-12" style="z-index:0;">
                             </form>
                         </div>
 
