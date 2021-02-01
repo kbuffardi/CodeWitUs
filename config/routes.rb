@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post "newVideo" => "api#newVideo"
   post "like" => "api#like"
 
+  get "creator/add" => "creator#add"
+  post "creator/add" => "creator#addTutorial"
   
 
   post 'user/register' => "user#register"

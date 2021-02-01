@@ -39,8 +39,7 @@
                         <div class="col-7 pl-4">
 
                             <h1 class="font-weight-bold ">
-                                Lorem Ipsum with if statements
-                          
+                                <%= @vData.vtitle %>                          
                             </h1>
 
                             <div class="form-row ">
@@ -50,11 +49,11 @@
                                 </div>
 
                                 <div class="form-group col-md-2 text-right mt-3 ">
-                                    <button type="submit " class="btn btn-outline-primary w-100 "> Concept</button>
+                                    <button type="submit " class="btn btn-outline-primary w-100 "> <%= @con.sub(/\w/, &:capitalize) %></button>
                                 </div>
 
                                 <div class="form-group col-md-2 text-right mt-3 ">
-                                    <button type="submit " class="btn btn-outline-primary w-100 "> Interest</button>
+                                    <button type="submit " class="btn btn-outline-primary w-100 "> <%= @int.sub(/\w/, &:capitalize) %></button>
                                 </div>
 
                             </div>
@@ -84,7 +83,7 @@
 
                       
 
-                        <div class="col-md-2 p-2 text-center">
+                        <div class="col-md-1 p-1 text-center">
 
                             <div class="bg-primary text-center p-2" style="opacity: .5; border-radius: .5em;">
                                 <i class="fas fa-share-alt text-white"></i>
@@ -97,13 +96,25 @@
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcE3npkkIN-Ds9L3z3zbB97kwtOlq9jjJ2lQ&usqp=CAU" style="width: 5em;">
                             <h6 class="mt-2">CodeWit <u>Destiny</u></h6>
                         </div>
+
+                        
                     </div>
                 </div>
 
 
                 <div class="col-md-4 col-sm-12">
 
-                    <iframe id="codeworkout" name="codeworkout" src="https://codeworkout.cs.vt.edu/gym/exercises/688/practice?lti_launch=true&workout_id=955" style="height:100%; min-height:35em; width:100%;background-color: #f9f9f9; " sandbox="allow-scripts allow-modals allow-top-navigation allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms "></iframe>
+                    <% if defined? @vData %>
+                            <%  if @vData %>
+                                <iframe id="codeworkout" name="codeworkout" src="<%= @vData.cwlink %>" style="height:100%; min-height:35em; width:100%;background-color: #f9f9f9; " sandbox="allow-scripts allow-modals allow-top-navigation allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms "></iframe>
+                            <% else %>
+                                <iframe id="codeworkout" name="codeworkout" src="https://codeworkout.cs.vt.edu/gym/exercises/688/practice?lti_launch=true&workout_id=955" style="height:100%; min-height:35em; width:100%;background-color: #f9f9f9; " sandbox="allow-scripts allow-modals allow-top-navigation allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms "></iframe>
+                            <% end %>
+                    <% else %>
+                            <iframe id="codeworkout" name="codeworkout" src="https://codeworkout.cs.vt.edu/gym/exercises/688/practice?lti_launch=true&workout_id=955" style="height:100%; min-height:35em; width:100%;background-color: #f9f9f9; " sandbox="allow-scripts allow-modals allow-top-navigation allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms "></iframe>
+                    <% end %>
+
+
 
                 </div>
 

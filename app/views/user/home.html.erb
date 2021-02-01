@@ -44,10 +44,28 @@
 
                     </div>
 
+                     <div class=" col-12">
+                        <label class="font-weight-normal">Role: </label>
+                        <span class="text-secondary">
+
+                        <% if @uData.role == 0 %>
+                            Student
+                        <% elsif @uData.role == 1 %>
+                            Creator
+                        <% else %>
+                            Admin
+                        <% end %>
+
+                            </span>
+
+                    </div>
+
                     <%= render "interest" %>
 
-                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">Test Modal</button>
-
+                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">Update Interest</button>
+                        <% if @uData.role == 1 %>
+                            <a class="ml-1 btn btn-outline-secondary" href="/creator/add" >Add Tutorial</a>
+                        <% end %>
 
 
 

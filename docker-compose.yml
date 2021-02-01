@@ -12,10 +12,12 @@ services:
   web:
     image: cw-rails:latest
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid  && rake export:seeds_format > db/seeds.rb && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/codewit
     ports:
       - "3000:3000"
     depends_on:
       - db
+
+    # && rake export:seeds_format > db/seeds.rb

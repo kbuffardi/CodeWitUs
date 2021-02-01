@@ -106,7 +106,7 @@
 
                                         <% @interestData.each do |int| %>
                                             <a class="btn btn-outline-primary mb-1 Intr<%= int.id %> IntrButton" valSet="false" id="<%= int.id %>">
-                                                <%= int.interest_name %>
+                                                <%= int.interest_name.sub(/\w/, &:capitalize) %>
                                             </a>
                                             <% end %>
                                     </div>

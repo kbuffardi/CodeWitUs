@@ -38,10 +38,25 @@ class VideoController < ApplicationController
             @uData = User.find_by(id: @user )
             @vData = Video.find_by(id: @vid )
             
+            
             if Like.exists?(video_id: @vid, user_id:@user )
                 @likeVal = 1
             else
                 @likeVal = 0
+            end
+            
+            if Interest.exists?(id: @vData.interests)
+                @interest = Interest.find_by(id: @vData.interests )
+                @int = @interest.interest_name
+            else
+                @int = "Interest"
+            end
+
+            if Concept.exists?(id: @vData.concepts)
+                @concept = Concept.find_by(id: @vData.concepts)
+                @con = @concept.name
+            else
+                @con = "Concept"
             end
 
             render template:'video/index'
