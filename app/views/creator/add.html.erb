@@ -10,6 +10,7 @@
 
 
         <%= javascript_pack_tag 'interest' %>
+            <%= javascript_pack_tag 'creator' %>
 
 </head>
 
@@ -67,19 +68,13 @@
 
                                     <div class="form-group">
                                         <label for="exampleFormControlSelect1">Interest</label>
-                                        <select name="interest" class="form-control" id="exampleFormControlSelect1">
-                                            <% @conceptData.each do |int| %>
-                                            <option value="<%= int.id %>">
-                                                <%= int.name.sub(/\w/, &:capitalize) %>
-                                            </option>     
-                                            <% end %>
-                                        </select>
-                                    </div>
 
+                                        <div class="row">
+                                            <input name="new_interest" type="text" class="form-control col-8 ml-3 mr-1 new_interest" id="exampleFormControlInput1" placeholder="Create a new interest.">
+                                            <div class="btn btn-info col-3 addInterest">Add</div>
+                                        </div>
+                                        <br>
 
-
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Interest</label>
                                         <select name="interest" class="form-control" id="exampleFormControlSelect1">
                                             <% @interestData.each do |int| %>
                                             <option value="<%= int.id %>">
@@ -87,6 +82,28 @@
                                             </option>     
                                             <% end %>
                                         </select>
+
+                                        <div class="mt-3">
+                                            <p> Selected Interest: <span class="selectedInterest">  </span> </p>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Concept</label>
+
+                                        <input name="new_concept" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Create a new concept.">
+
+                                        <br>
+                                        <select name="interest" class="form-control" id="exampleFormControlSelect1">
+                                            <% @conceptData.each do |int| %>
+                                            <option value="<%= int.id %>">
+                                                <%= int.name.sub(/\w/, &:capitalize) %>
+                                            </option>     
+                                            <% end %>
+                                        </select>
+
                                     </div>
 
 
