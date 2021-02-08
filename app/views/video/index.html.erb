@@ -10,6 +10,7 @@
 
 
         <%= javascript_pack_tag 'interest' %>
+        <%= javascript_pack_tag 'video_home' %>
 
 </head>
 
@@ -20,16 +21,25 @@
 
             <div class="row">
 
-                <div class="" style="resize: horizontal;overflow: hidden; width:70%; min-width: 55%; max-width: 70%;">
+                <div class="col-md-8 col-sm-12 " >
 
+                    <% if defined? @vData %>
+                            <%  if @vData %>
+                                <iframe id=" player " src="<%= @vData.video_id %>" style="width:100%; height:35em; "></iframe>
+                            <% else %>
+                                <iframe id=" player " src="https://www.youtube.com/embed/XKu_SEDAykw?enablejsapi=1 " style="width:100%; height:35em; "></iframe>
+                            <% end %>
+                    <% else %>
+                                        <iframe id=" player " src="https://www.youtube.com/embed/XKu_SEDAykw?enablejsapi=1 " style="width:100%; height:35em; "></iframe>
+                    <% end %>
 
-                    <iframe id=" player " src="https://www.youtube.com/embed/XKu_SEDAykw?enablejsapi=1 " style="width:100%; height:35em; "></iframe>
+                  
 
                     <div class="row m-3">
-                        <div class="col-8 pl-4">
+                        <div class="col-7 pl-4">
 
                             <h1 class="font-weight-bold ">
-                                Lorem Ipsum with if statements
+                                <%= @vData.vtitle %>                          
                             </h1>
 
                             <div class="form-row ">
@@ -39,17 +49,42 @@
                                 </div>
 
                                 <div class="form-group col-md-2 text-right mt-3 ">
-                                    <button type="submit " class="btn btn-outline-primary w-100 "> Concept</button>
+                                    <button type="submit " class="btn btn-outline-primary w-100 "> <%= @con.sub(/\w/, &:capitalize) %></button>
                                 </div>
 
                                 <div class="form-group col-md-2 text-right mt-3 ">
-                                    <button type="submit " class="btn btn-outline-primary w-100 "> Interest</button>
+                                    <button type="submit " class="btn btn-outline-primary w-100 "> <%= @int.sub(/\w/, &:capitalize) %></button>
                                 </div>
 
                             </div>
                         </div>
 
-                        <div class="col-md-2 p-2 text-center">
+                 
+
+
+                    <% if defined? @vData %>
+                            <%  if @vData %>
+                            <div class="col-md-2 p-2 text-center thumb" id="<%= @vData.id %>" style="cursor:pointer;">
+                                <div class="text-center p-2 " style="">
+                                    Helpful? 
+                                    
+                                     <%  if @likeVal == 1 %>
+                                        <i class="fas fa-thumbs-up" id="thumbId" style="font-size:1.5em;"></i>
+                                     <%  else %>
+                                        <i class="far fa-thumbs-up" id="thumbId" style="font-size:1.5em;"></i>
+                                    <% end %>
+
+                                </div>
+                            </div>
+                            <% end %>
+                    <% end %>
+
+
+
+                      
+
+                        <div class="col-md-1 p-1 text-center">
+
                             <div class="bg-primary text-center p-2" style="opacity: .5; border-radius: .5em;">
                                 <i class="fas fa-share-alt text-white"></i>
                                 <span class="text-white ml-2"> Share</span>
@@ -61,13 +96,24 @@
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTcE3npkkIN-Ds9L3z3zbB97kwtOlq9jjJ2lQ&usqp=CAU" style="width: 5em;">
                             <h6 class="mt-2">CodeWit <u>Destiny</u></h6>
                         </div>
+
+                        
                     </div>
                 </div>
 
 
-                <div class=" " style="resize: horizontal;overflow: hidden; width:30%; min-width: 20%; max-width: 30%;">
+                <div class="col-md-4 col-sm-12">
 
-                    <iframe id="codeworkout " src=" " style="height:100%; width:100%;background-color: #f9f9f9; "></iframe>
+                    <% if defined? @vData %>
+                            <%  if @vData %>
+                                <iframe id="codeworkout" name="codeworkout" src="<%= @vData.cwlink %>" style="height:100%; min-height:35em; width:100%;background-color: #f9f9f9; " sandbox="allow-scripts allow-modals allow-top-navigation allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms "></iframe>
+                            <% else %>
+                                <iframe id="codeworkout" name="codeworkout" src="https://codeworkout.cs.vt.edu/gym/exercises/688/practice?lti_launch=true&workout_id=955" style="height:100%; min-height:35em; width:100%;background-color: #f9f9f9; " sandbox="allow-scripts allow-modals allow-top-navigation allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms "></iframe>
+                            <% end %>
+                    <% else %>
+                            <iframe id="codeworkout" name="codeworkout" src="https://codeworkout.cs.vt.edu/gym/exercises/688/practice?lti_launch=true&workout_id=955" style="height:100%; min-height:35em; width:100%;background-color: #f9f9f9; " sandbox="allow-scripts allow-modals allow-top-navigation allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms "></iframe>
+                    <% end %>
+
 
 
                 </div>

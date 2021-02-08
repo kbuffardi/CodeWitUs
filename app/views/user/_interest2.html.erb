@@ -25,7 +25,7 @@ display:none; ">
 
 
             <% @interestData.each do |int| %>
-            <a href="#" class="btn btn-outline-primary mb-1" id="Intr<%= int.id %>"> <%= int.interest_name %></a>
+            <a href="#" class="btn btn-outline-primary mb-1" id="Intr<%= int.id %>"> <%= int.interest_name.sub(/\w/, &:capitalize) %></a>
             <% end %>
                                                     </div>
                                                 </div>

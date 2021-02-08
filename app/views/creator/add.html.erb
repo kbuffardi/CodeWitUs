@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    "login", :media => "all" %>
+        <title>CodeWitUs Login</title>
+
+
+        <%= javascript_pack_tag 'interest' %>
+            <%= javascript_pack_tag 'creator' %>
+
+</head>
+
+<body>
+    <%= render "layouts/header" %>
+
+        <div class="container p-5">
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12 mt-1 text-center">
+
+                    <img src="https://cdn4.vectorstock.com/i/1000x1000/50/28/professional-training-education-video-tutorial-vector-21795028.jpg" class="login-image">
+                </div>
+                <div class="col-md-6 col-sm-12">
+
+                    <div class="form-row">
+
+
+                        <h2 class="mb-5">
+                            Create Tutorial
+
+
+                        </h2>
+
+
+                        <div class=" col-12">
+                            <label class="font-weight-normal">Creator: </label>
+                            <span class="text-secondary">
+
+                        <%= @uData.email  %>!
+                            </span>
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <div class="col-12">
+                            <form method="POST" action="add">
+                                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Tutorial Title</label>
+                                        <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tutorial Title">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Youtube Link</label>
+                                        <input name="ytlink" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Youtube Link">
+                                    </div>
+                                    <!-- 
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Concepts</label>
+                                        <input name="concepts" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Concepts">
+                                    </div> -->
+
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Interest</label>
+
+                                        <div class="row">
+                                            <input name="new_interest" type="text" class="form-control col-8 ml-3 mr-1 new_interest" id="exampleFormControlInput1" placeholder="Create a new interest.">
+                                            <div class="btn btn-info col-3 addInterest">Add</div>
+                                        </div>
+                                        <br>
+
+                                        <select name="interest" class="form-control" id="exampleFormControlSelect1">
+                                            <% @interestData.each do |int| %>
+                                            <option value="<%= int.id %>">
+                                                <%= int.interest_name.sub(/\w/, &:capitalize) %>
+                                            </option>     
+                                            <% end %>
+                                        </select>
+
+                                        <div class="mt-3">
+                                            <p> Selected Interest: <span class="selectedInterest">  </span> </p>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Concept</label>
+
+                                        <input name="new_concept" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Create a new concept.">
+
+                                        <br>
+                                        <select name="interest" class="form-control" id="exampleFormControlSelect1">
+                                            <% @conceptData.each do |int| %>
+                                            <option value="<%= int.id %>">
+                                                <%= int.name.sub(/\w/, &:capitalize) %>
+                                            </option>     
+                                            <% end %>
+                                        </select>
+
+                                    </div>
+
+
+
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Codeworkout Link</label>
+                                        <input name="cwlink" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Codeworkout Link">
+                                    </div>
+
+                                    <input type="submit" value="Upload" class="btn btn-primary col-12" style="z-index:0;">
+                            </form>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <!-- <hr> -->
+
+
+        </div>
+
+
+
+</body>
+
+</html>

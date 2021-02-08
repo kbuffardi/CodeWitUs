@@ -19,3 +19,5 @@ services:
       - "3000:3000"
     depends_on:
       - db
+
+    # && rake export:seeds_format > db/seeds.rb
