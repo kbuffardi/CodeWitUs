@@ -8,9 +8,22 @@
         </ul>
         <div class="text-right">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout <span class="sr-only"></span></a>
-                </li>
+
+
+        <% if defined?(@headerFlag)%>
+                          <li class="nav-item ">
+                            <a class="nav-link registerBtn" style="cursor:pointer;"> <i class="fas fa-user"></i> Register <span class="sr-only"></span></a>
+                        </li>
+        <% else %>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout <span class="sr-only"></span></a>
+                        </li>
+        <% end %>
+
+
+
+
+
             </ul>
         </div>
     </div>
