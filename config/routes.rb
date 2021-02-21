@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   post "clearinterest" => "api#clearInterest"
   post "insertinterest" => "api#insertInterest"
   post "insertConcept" => "api#insertConcept"
+  post "userList" => "api#getUser"
+  post "updateRole" => "api#accessUser"
 
+  
   get "/" => "application#home"
   post "newVideo" => "api#newVideo"
   post "like" => "api#like"
@@ -22,6 +25,9 @@ Rails.application.routes.draw do
   get 'tutorials' => "video#list"
 
   post 'user/register' => "user#register"
+
+  get 'manage' => "manage#home"
+
 
   resources :video
 

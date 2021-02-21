@@ -46,8 +46,8 @@ class ApiController < ApplicationController
           youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
           youtube_id = $5
         end
-      
-        %Q{http://www.youtube.com/embed/#{ youtube_id }}
+     
+        %Q{#{ youtube_id }}
       end
       
 
@@ -102,13 +102,17 @@ class ApiController < ApplicationController
 
     def insertConcept
         if request.post? 
-            interest_new = Concept.find_or_create_by(name: params[:keyword]) do |u|
-                u.name= params[:keyword]
-            end
-            
-            response = {:resp => "success"}
-            response.to_json
-            render json: JSON.pretty_generate(response.as_json)               
+
+            if Concept.exists?( name: params[:keyword])
+                response = {:resp => "failed"}
+                response.to_json
+                render json: JSON.pretty_generate(response.as_json)
+            else    
+                newIntr = Concept.find_or_create_by(name: params[:keyword])
+                response = {:resp => newIntr.id}
+                response.to_json
+                render json: JSON.pretty_generate(response.as_json)            
+            end            
         end
     end
 
@@ -133,6 +137,33 @@ class ApiController < ApplicationController
         end
     end
 
+    def getUser
+
+        if request.post? 
+            search= params[:keyword]
+
+            @userData = User.where("email like ?","%#{search}%").limit(10)
+            render json: JSON.pretty_generate(@userData.as_json)
+        end
+
+    end
+
+
+    def accessUser
+
+        if request.post? 
+            key1 = params[:uid]
+            key2 = params[:role]
+
+            user = User.find(key1)
+            user.role = key2
+            user.save
+
+
+            render json: JSON.pretty_generate({:resp => "Success"});
+        end
+
+    end
 
 
 

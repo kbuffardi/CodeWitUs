@@ -34,7 +34,7 @@ class CreatorController < ApplicationController
           youtube_id = $5
         end
       
-        %Q{http://www.youtube.com/embed/#{ youtube_id }}
+        %Q{#{ youtube_id }}
     end
 
 

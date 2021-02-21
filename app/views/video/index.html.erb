@@ -25,7 +25,7 @@
 
                     <% if defined? @vData %>
                             <%  if @vData %>
-                                <iframe id=" player " src="<%= @vData.video_id %>" style="width:100%; height:35em; "></iframe>
+                                <iframe id=" player " src="http://www.youtube.com/embed/<%= @vData.video_id %>" style="width:100%; height:35em; "></iframe>
                             <% else %>
                                 <iframe id=" player " src="https://www.youtube.com/embed/XKu_SEDAykw?enablejsapi=1 " style="width:100%; height:35em; "></iframe>
                             <% end %>
