@@ -50,6 +50,7 @@ class CreatorController < ApplicationController
         @uInterest = UserInterest.where(userId: @uData.id).all
         @uInterest = Interest.find_by_sql([ "SELECT * FROM interests JOIN user_interests ON interests.id =  user_interests.interestId AND user_interests.userid = ?", @uData.id]);
         @uVideo  = Video.where(user: @uData.id).all
+        
         @uvInterest = Interest.find_by_sql([ "SELECT * FROM interests JOIN videos ON interests.id = CAST(videos.interests AS INTEGER)"]);
         @uvConcepts = Concept.find_by_sql([ "SELECT * FROM concepts JOIN videos ON concepts.id = CAST(videos.concepts AS INTEGER)"]);
 

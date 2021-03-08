@@ -76,12 +76,12 @@
                         <div class="col-md-6 col-sm-12 mt-5" style="">
                             <a href="/video/home?id=8">
 
-                            <% @videoData.first(1).each do |video| %>
-                                                <img src="https://img.youtube.com/vi/<%= video.video_id %>/sddefault.jpg" class="login-image" style="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;width:80%; float:right;padding:10px;padding-bottom:10px;padding-top:10px;margin:0px;">
-                            <% end %>
+                                <% @videoData.first(1).each do |video| %>
+                                    <img src="https://img.youtube.com/vi/<%= video.video_id %>/sddefault.jpg" class="login-image" style="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;width:80%; float:right;padding:10px;padding-bottom:10px;padding-top:10px;margin:0px;">
+                                    <% end %>
 
 
-                        
+
 
 
                             </a>
@@ -116,6 +116,107 @@
                             </div>
 
 
+
+
+                            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+                                <div class="row mt-3">
+
+
+
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left" style="font-size: 2em;"></i></a>
+                                    </div>
+
+
+                                    <div class="carousel-inner col-11" role="listbox">
+
+                                        <div class="carousel-item active">
+
+                                            <div class="row">
+
+                                                <% i = 0 %>
+                                                    <%@videoData.zip(@uvInterest) do |vid, a2| %>
+
+
+                                                        <div class="col-md-3 clearfix d-none d-md-block">
+
+                                                            <div class="card mb-2">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">
+                                                                        <%= vid.vtitle.sub(/\w/, &:capitalize) %>
+                                                                    </h4>
+
+                                                                    <a class="btn btn-primary">
+                                                                        <%= a2.interest_name.sub(/\w/, &:capitalize) %>
+                                                                    </a>
+                                                                    <a class="btn btn-primary">
+                                                                        <%= @uvConcepts[i].name.sub(/\w/, &:capitalize) %>
+                                                                    </a>
+
+                                                                    <div class="row mt-3">
+
+                                                                        <p class="card-text  col-8 pt-3"><b>CodeWith</b>&#183;<u><%= @uvCreators[i].username.sub(/\w/, &:capitalize) %></u>
+                                                                        </p>
+                                                                        <img class="card-img-top col-4" src="<%= @uvCreators[i].picture %>" alt="Card image cap">
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <% i += 1 %>
+                                                            <% end %>
+
+
+                                                                <!-- <div class="col-md-3">
+                                                                    <div class="card mb-2">
+                                                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                                                                        <div class="card-body">
+                                                                            <h4 class="card-title">Card title</h4>
+                                                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                                            <a class="btn btn-primary">Button</a>
+                                                                        </div> -
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div class="col-md-3 clearfix d-none d-md-block">
+                                                                    <div class="card mb-2">
+                                                                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
+                                                                        <div class="card-body">
+                                                                            <h4 class="card-title">Card title</h4>
+                                                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                                            <a class="btn btn-primary">Button</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+
+
+
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                                            <li data-target="#multi-item-example" data-slide-to="1"></li>
+                                            <li data-target="#multi-item-example" data-slide-to="2"></li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="col d-flex align-items-center justify-content-center">
+                                        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"  style="font-size: 2em;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
