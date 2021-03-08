@@ -10,7 +10,7 @@ class ManageController < ApplicationController
         @user = session[:user_id] 
         @uData = User.find_by(id: @user )
 
-        if @uData.role == 1
+        if @uData.role == 2
             render template:'manage/home'
         else
             url = "/home"

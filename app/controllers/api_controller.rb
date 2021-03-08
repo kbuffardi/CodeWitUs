@@ -89,9 +89,9 @@ class ApiController < ApplicationController
 
     def insertInterest
         if request.post? 
-            interest_new = UserInterest.find_or_create_by(userId: session[:user_id], interestId: params[:val2]) do |u|
-                u.userId = params[:val1]
-                u.interestId= params[:val2]
+            interest_new = UserInterest.find_or_create_by(userId: session[:user_id], interestid: params[:val2]) do |u|
+                u.userId = session[:user_id]
+                u.interestid= params[:val2]
             end
             
             response = {:resp => "success"}

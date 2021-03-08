@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    "login", :media => "all" %>
+        <%= stylesheet_link_tag    "creator", :media => "all" %>
+
+            <title>CodeWitUs Login</title>
+
+
+            <%= javascript_pack_tag 'interest' %>
+
+</head>
+
+<body>
+    <%= render "layouts/header" %>
+
+        <div class=" pt-5">
+
+            <div class="row ">
+                <div class="col-md-3 col-sm-12 text-center">
+                    <h2 class="text-center"> CodeWit &#183; <span class="font-weight-bold"><u><%= @uData.username.sub(/^(\w)/) {|s| s.capitalize} %></u></span> </h2>
+
+                    <img src="<%= @uData.picture %>" class="creator-image p-4 mb-3">
+
+
+                    <div class="mt-5">
+                        <% @uInterest.each do |int| %>
+                            <a class="btn btn-outline-primary mb-1 Intr<%= int.id %> " style="font-size:.5em;" id="<%= int.id %>">
+                                <%= int.interest_name.sub(/\w/, &:capitalize) %>
+                            </a>
+                            <% end %>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-9 mt-5 col-sm-12">
+
+
+                    <div class="col-12">
+                        <% i = 0 %>
+                            <%@uVideo.zip(@uvInterest) do |vid, a2| %>
+
+                                <div class="card">
+                                    <h5 class="card-header">
+                                        <%= vid.vtitle.sub(/\w/, &:capitalize) %>
+                                    </h5>
+                                    <div class="card-body">
+                                        <!-- <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                                        <a href="#" class="btn btn-primary">
+                                            <%= a2.interest_name.sub(/\w/, &:capitalize) %>
+                                        </a>
+                                        <a href="#" class="btn btn-primary">
+                                            <%= @uvConcepts[i].name.sub(/\w/, &:capitalize) %>
+                                        </a>
+                                    </div>
+                                </div>
+                                <br>
+                                <% i += 1 %>
+
+                                    <% end %>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <hr> -->
+
+
+        </div>
+
+
+
+</body>
+
+</html>
