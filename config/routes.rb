@@ -11,17 +11,25 @@ Rails.application.routes.draw do
   post "clearinterest" => "api#clearInterest"
   post "insertinterest" => "api#insertInterest"
   post "insertConcept" => "api#insertConcept"
+  post "userList" => "api#getUser"
+  post "updateRole" => "api#accessUser"
 
+  
   get "/" => "application#home"
   post "newVideo" => "api#newVideo"
   post "like" => "api#like"
 
   get "creator/add" => "creator#add"
   post "creator/add" => "creator#addTutorial"
-  
+  get "with/:userid" => "creator#profile"
+
+
   get 'tutorials' => "video#list"
 
   post 'user/register' => "user#register"
+
+  get 'manage' => "manage#home"
+
 
   resources :video
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    "login", :media => "all" %>
+        <title>CodeWitUs Manage</title>
+
+
+        <%= javascript_pack_tag 'manage' %>
+
+</head>
+
+<body>
+    <%= render "layouts/header" %>
+
+        <div class="container p-5">
+
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+
+
+
+                    <h1 class="mb-5 text-center">
+                        Administrator Management
+                    </h1>
+
+
+                    <div class=" text-center">
+                        <span class="font-weight-bold">Admin:</span>
+                        <%= @uData.email  %>!
+
+                            <form>
+                                <div class="form-group mt-5">
+                                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" autocomplete="off" placeholder="Enter email">
+                                    <small id="email" class="form-text text-muted">Search for user with email address.</small>
+                                </div>
+                            </form>
+                    </div>
+
+                    <div id="userResult">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Permission</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userTable">
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+        </div>
+
+
+
+</body>
+
+</html>

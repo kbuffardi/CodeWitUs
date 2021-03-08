@@ -2,8 +2,8 @@
 
 one:
   userId: 1
-  interestId: 1
+  interestid: 1
 
 two:
   userId: 1
-  interestId: 1
+  interestid: 1

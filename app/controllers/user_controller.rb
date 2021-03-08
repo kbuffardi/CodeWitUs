@@ -56,6 +56,8 @@ class UserController < ApplicationController
             return false
         end
 
+        @headerFlag = 0
+        
         render template:'user/login'
     end
 
