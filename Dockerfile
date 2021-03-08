@@ -6,7 +6,7 @@ LABEL version=0.2
 
 # Web Server
 FROM ruby:2.7.0
-RUN gem install bundler:2.1.4
+RUN gem install bundler -v "~> 2.1.4"
 
 #  ...with NodeJS and Yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
@@ -15,10 +15,8 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 
 # Set up rails environment
 WORKDIR /codewit
-COPY Gemfile /codewit/Gemfile
-COPY Gemfile.lock /codewit/Gemfile.lock
-COPY . /codewit
-RUN bundle install && bundle update --all
+COPY Gemfile* /codewit/
+COPY . /codewit/
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
