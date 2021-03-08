@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_132643) do
+ActiveRecord::Schema.define(version: 2021_03_05_133627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2021_02_19_132643) do
   end
 
   create_table "user_interests", force: :cascade do |t|
-    t.integer "userId"
-    t.integer "interestId"
+    t.integer "userid"
+    t.integer "interestid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_02_19_132643) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "picture"
+    t.string "fname"
+    t.string "lname"
   end
 
   create_table "videos", force: :cascade do |t|
