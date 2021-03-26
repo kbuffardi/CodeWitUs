@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
     def home
 
+        if params[:error] 
+            @error = "Oops! You were heading in the wrong direction, so we brought you home safely."
+        end
+
+
         if params[:interest] 
             @intrID = params[:interest]
             puts @intrID
@@ -51,6 +56,7 @@ class ApplicationController < ActionController::Base
                 @videoAut = User.find_by(id: @videoData[0].user)
             end
         else
+            
             @interestData = Interest.all()
             @conceptsData = []
             @videoData = Video.order('RANDOM()').limit(1);
@@ -65,11 +71,19 @@ class ApplicationController < ActionController::Base
             @headerFlag = 0
         end
 
+        @date = Date.today.to_datetime
+        @activeAlerts = AlertMessage.where('expiry > ?', @date).all
 
 
         render template:'static/index'
     end
 
+
+
+    def error
+        url = "/?error=404"
+        redirect_to url
+    end
  
     
 end

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    "login", :media => "all" %>
+        <title>CodeWitUs Login</title>
+
+
+        <%= javascript_pack_tag 'interest' %>
+            <%= javascript_pack_tag 'creator' %>
+    
+</head>
+
+<body>
+    <%= render "layouts/header" %>
+
+        <div class="container p-5">
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12 mt-1 text-center">
+
+                    <img src="https://cdn4.vectorstock.com/i/1000x1000/50/28/professional-training-education-video-tutorial-vector-21795028.jpg" class="login-image">
+                </div>
+                <div class="col-md-6 col-sm-12">
+
+                    <div class="form-row">
+
+
+                        <h2 class="mb-5">
+                            Create Alert Message
+
+
+                        </h2>
+
+
+                        <div class=" col-12">
+                            <label class="font-weight-normal">Creator: </label>
+                            <span class="text-secondary">
+
+                        <%= @uData.email  %>!
+                            </span>
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <div class="col-12">
+                            <form method="POST" action="/newAlert">
+                                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Message</label>
+                                        <input name="message" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Message">
+                                    </div>
+
+                            
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Expiry Time</label>
+                                        <input name="expiry" type="datetime-local" class="form-control" id="exampleFormControlInput1" >
+                                    </div>
+
+
+
+                                    <input type="submit" value="Add" class="btn btn-primary col-12" style="z-index:0;">
+                            </form>
+
+
+
+
+                            <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Message</th>
+      <th scope="col">Expiry</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @activeAlerts.each do |users| %>
+         
+        <tr>
+        <th scope="row"><%= users.id %> </th>
+        <td><%= users.message %></td>
+        <td><%= users.expiry %></td>
+        <td><a class="btn btn-warning" href="/creator/editalert?alertId=<%= users.id %>">Edit</a> </td>
+        <td> <a class="btn btn-danger" href="/deleteAlert">Delete</a> </td>
+        </tr>
+    
+
+    <% end %>
+
+  
+    
+  </tbody>
+</table>
+
+
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <!-- <hr> -->
+
+
+        </div>
+
+
+
+</body>
+
+</html>

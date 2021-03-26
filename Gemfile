@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.5'
+gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use postgres as the database for Active Record
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
@@ -28,7 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'omniauth'
+gem "omniauth", "~> 1.9.1"
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'omniauth-google-oauth2'
 

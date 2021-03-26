@@ -25,6 +25,64 @@ class CreatorController < ApplicationController
     end
 
 
+    def alert
+        
+        if session[:user_id] == nil
+            render template:'user/login'
+            return false
+        end
+
+        @user = session[:user_id] 
+        @date = Date.today.to_datetime
+        @uData = User.find_by(id: @user )
+        @activeAlerts = AlertMessage.where('expiry > ?', @date).all
+
+        puts @activeAlerts
+
+        if @uData.role == 1
+            render template:'creator/alert'
+        else
+            url = "/home"
+            redirect_to url    
+        end
+        
+    end
+
+
+    def editalert
+        
+        if session[:user_id] == nil
+            render template:'user/login'
+            return false
+        end
+
+        if params[:alertId] 
+            @alertId = params[:alertId] 
+            @user = session[:user_id] 
+            @date = Date.today.to_datetime
+            @uData = User.find_by(id: @user )
+            @activeAlerts = AlertMessage.where(:id => @alertId).limit(1)
+
+            @todo = @activeAlerts[0].expiry.strftime('%Y-%m-%dT%H:%M')
+
+            puts @activeAlerts
+
+            if @uData.role == 1
+                render template:'creator/editAlert'
+            else
+                url = "/home"
+                redirect_to url    
+            end
+        else
+            url = "/home"
+            redirect_to url    
+        end
+       
+        
+    end
+
+
+
 
     def profile
         
