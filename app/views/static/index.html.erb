@@ -52,6 +52,18 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 mt-1 text-center">
 
+                            <% if not @error.nil?-%>
+                                <div class="alert alert-warning alert-dismissible fade show mb-5" role="alert">
+                                    <strong><%= @error %></strong>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                            <% end -%>
+
+                            <%= render "static/alerts" %>
+
+
                             <h1 class="d-inline-block align-middle font-weight-bold">I want to learn about Coding</h1>
 
                             &nbsp;&nbsp;
@@ -134,6 +146,7 @@
                                         <div class="carousel-item active">
 
                                             <div class="row">
+                                            <% if not @uvInterest.nil? -%>
 
                                                 <% i = 0 %>
                                                     <%@videoData.zip(@uvInterest) do |vid, a2| %>
@@ -167,6 +180,7 @@
 
                                                         <% i += 1 %>
                                                             <% end %>
+                                                        <% end -%>
 
 
                                                                 <!-- <div class="col-md-3">

@@ -166,6 +166,50 @@ class ApiController < ApplicationController
     end
 
 
+    def newAlert
+
+        if session[:user_id] == nil
+            render template:'user/login'
+            return false
+        end
+
+        if request.post? 
+            msg= params[:message]
+            expiry= params[:expiry]
+
+            newIntr = AlertMessage.find_or_create_by(message: msg, user: session[:user_id], expiry: expiry)
+            response = {:resp => newIntr.id}
+            response.to_json
+            url = "/creator/alert"
+            redirect_to url        
+        end
+    
+    end
+
+
+
+    def editAlert
+
+        if session[:user_id] == nil
+            render template:'user/login'
+            return false
+        end
+
+        if request.post? 
+            msg= params[:message]
+            expiry= params[:expiry]
+            id = params[:id]
+         
+            alert = AlertMessage.find(id)
+            alert.message = msg
+            alert.expiry = expiry
+            alert.save
+
+            url = "/creator/alert"
+            redirect_to url        
+        end
+    
+    end
 
 
 end
