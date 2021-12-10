@@ -21,7 +21,7 @@ COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
-RUN yarn install --check-files && yarn upgrade
+RUN yarn install --check-files --ignore-engines && yarn upgrade --ignore-engines 
 
 # Start rails main process
 CMD ["rails","server","-b","0.0.0.0"]
