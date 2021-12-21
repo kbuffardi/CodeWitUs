@@ -127,8 +127,15 @@ And then visit the [local server in your web browser](http://0.0.0.0:3000
 
 After the containers are running, execute command for interactive mode in a new terminal:
 ```shell
-docker-compose exec web sh # Replace "web" with "db" for interacting with db container
+docker-compose exec web sh
 ```
+
+Or run a new copy of the container with:
+```shell
+docker-compose run web sh
+```
+
+Replace `web` with `db` for interacting with only the database container
 
 ## Contributing
 
