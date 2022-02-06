@@ -1,0 +1,17 @@
+name: codewithus-ci
+on:
+  push:
+    branches: [ primary ]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+    steps:
+      - name: Ruby setup and gem cache
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        with:
+          ruby-version: 2.7.0
+          bundler-cache: true
