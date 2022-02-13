@@ -13,5 +13,7 @@ jobs:
         run: chmod +x ./tabularasa.sh
       - name: Workaround for yarn integrity issue
         run: ./tabularasa.sh
-      - name: Build using Docker Compose
+      - name: Docker Compose Build
+        run: docker-compose build
+      - name: Docker Compose Up
         run: docker-compose up
