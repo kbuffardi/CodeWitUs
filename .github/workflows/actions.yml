@@ -10,6 +10,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Workaround for yarn integrity issue
-        run: ../../tabularasa.sh
+        run: ./tabularasa.sh
       - name: Build using Docker Compose
         run: docker-compose up
