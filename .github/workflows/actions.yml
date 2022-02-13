@@ -1,0 +1,13 @@
+name: actions
+on:
+  push:
+    branches: [ github-actions ]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build using Docker Compose
+        run: docker-compose up
