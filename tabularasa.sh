@@ -12,5 +12,5 @@ if [ -d ./tmp/rdbms ]
     mv -f ./tmp/rdbms rdbms_old
 fi
 
-# docker-compose build
-# docker-compose up
+docker-compose build
+docker-compose up
