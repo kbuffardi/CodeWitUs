@@ -1,7 +1,7 @@
 name: actions
 on:
   push:
-    branches: [ github-actions ]
+    branches: [ primary ]
 jobs:
   build:
     name: Build
