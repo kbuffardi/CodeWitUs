@@ -9,11 +9,5 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Permissions for tabularasa.sh
-        run: chmod +x ./tabularasa.sh
-      - name: Workaround for yarn integrity issue
-        run: ./tabularasa.sh
-      - name: Docker Compose Build
-        run: docker-compose build
       - name: Docker Compose Up
         run: docker-compose up -d
