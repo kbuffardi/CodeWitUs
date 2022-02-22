@@ -12,13 +12,8 @@ services:
   web:
     image: cw-rails:latest
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && rake db:migrate  &&  bundle exec rails s -p 3000 -b '0.0.0.0'"
-    volumes:
-      - .:/codewit
+    command: bash -c "rm -f tmp/pids/server.pid && rake db:migrate && rake db:seed && bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
       - "3000:3000"
     depends_on:
       - db
-
-    # && rake db:seed 
-    # && rake export:seeds_format > db/seeds.rb
