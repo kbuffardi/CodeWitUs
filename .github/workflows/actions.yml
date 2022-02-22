@@ -1,0 +1,13 @@
+name: actions
+on:
+  push:
+    branches: [ primary ]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Docker Compose Up
+        run: docker-compose up -d
