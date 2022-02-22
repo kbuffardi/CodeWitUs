@@ -2,11 +2,7 @@
 # set permissions
 sudo chown -R $USER:$USER .
 
-# clear remnants
-if [ -f yarn.lock ]
-  then
-    mv -f yarn.lock yarn.lock.old
-fi
+# backup database and start with new
 if [ -d ./tmp/rdbms ]
   then
     if [ -d ./tmp/rdbms_old ]
