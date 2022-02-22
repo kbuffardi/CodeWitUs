@@ -1,7 +1,7 @@
 name: actions
 on:
   push:
-    branches: [ primary ]
+    branches: [ primary, updates ]
 jobs:
   build:
     name: Build
