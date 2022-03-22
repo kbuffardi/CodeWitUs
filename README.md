@@ -1,5 +1,7 @@
 # CodeWitUs
 
+[![Coverage Status](https://coveralls.io/repos/github/kbuffardi/CodeWitUs/badge.svg?branch=testing)](https://coveralls.io/github/kbuffardi/CodeWitUs?branch=testing)
+
 > SEER Labs
 
 
