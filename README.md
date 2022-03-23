@@ -139,6 +139,14 @@ docker-compose run web sh
 
 Replace `web` with `db` for interacting with only the database container
 
+### Developing and debugging within the docker container
+
+Developing or debugging code inside Docker containers using the terminal can be tricky and time consuming. Also, if the container is deleted you will lose your changes and manually applying changes locally can cause inconsistency. A solution for this can be to use Visual Studio Code’s Remote Containers extension. VS Code will apply and track your changes (if you also have the Github extension) as you save your files through the IDE text editor.
+
+Article on the setup:
+
+[https://www.cloudsavvyit.com/12837/how-to-edit-code-in-docker-containers-with-visual-studio-code/#:~:text=Navigate to the directory you,a working directory bind mount](https://www.cloudsavvyit.com/12837/how-to-edit-code-in-docker-containers-with-visual-studio-code/#:~:text=Navigate%20to%20the%20directory%20you,a%20working%20directory%20bind%20mount).
+
 ## Contributing
 
 > To get started.
