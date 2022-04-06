@@ -2,8 +2,22 @@
 
 one:
   user: 
-  video_id: MyString
-
+  video_id: "https://www.youtube.com/embed/BVK6rCz_7SQ"
+  vtitle: "Variables in C++ for Soccer Players"
+  concepts: "Variables"
+  interests: "Athletics"
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/955/practice"
 two:
   user: 
-  video_id: MyString
+  video_id: "https://www.youtube.com/embed/APtxCYdcNcQ"
+  vtitle: "Variables in C++ for Constellations"
+  concepts: "Variables"
+  interests: "STEM"
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/955/practice"
+two:
+  user: 
+  video_id:
+  vtitle: "Boolean operators in C++ for Loggin In"
+  concepts: "Boolean operators"
+  interests:
+  cwlink:

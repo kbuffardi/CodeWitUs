@@ -1,7 +1,66 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  interest_name: 
-
-two:
-  interest_name: 
+stem:
+  id: 1
+  interest_name: "STEM"
+  interest_count: 0
+games:
+  id: 2
+  interest_name: "Games"
+  interest_count: 0
+interdisciplinary:
+  id: 3
+  interest_name: "Interdisciplinary"
+  interest_count: 0
+automotive:
+  id: 4
+  interest_name: "Automotive"
+  interest_count: 0
+fashion_cosmetics:
+  id: 5
+  interest_name: "Fashion & Cosmetics"
+  interest_count: 0
+arts_crafts:
+  id: 6
+  interest_name: "Arts & Crafts"
+  interest_count: 0
+reading:
+  id: 7
+  interest_name: "Reading"
+  interest_count: 0
+multimedia:
+  id: 8
+  interest_name: "Multimedia"
+  interest_count: 0
+relaxation:
+  id: 9
+  interest_name: "Relaxation"
+  interest_count: 0
+socializing:
+  id: 10
+  interest_name: "Socializing"
+  interest_count: 0
+athletics:
+  id: 11
+  interest_name: "Athletics"
+  interest_count: 0
+nature:
+  id: 12
+  interest_name: "Nature"
+  interest_count: 0
+culinary:
+  id: 13
+  interest_name: "Culinary"
+  interest_count: 0
+travel:
+  id: 14
+  interest_name: "Travel"
+  interest_count: 0
+animals:
+  id: 15
+  interest_name: "Animals"
+  interest_count: 0
+adulting:
+  id: 16
+  interest_name: "Adulting"
+  interest_count: 0
