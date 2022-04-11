@@ -12,6 +12,4 @@ jobs:
       - name: Build containers
         run: docker-compose build
       - name: Run tests
-        run: |
-          docker-compose run -itd web sh
-          bin/rails test
+        run: docker-compose run web bin/rails test
