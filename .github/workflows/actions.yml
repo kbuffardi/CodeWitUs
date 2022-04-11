@@ -1,7 +1,7 @@
 name: actions
 on:
   push:
-    branches: [ primary, updates ]
+    branches: [ primary, updates, testing ]
 jobs:
   build:
     name: Build
@@ -11,3 +11,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Docker Compose Up
         run: docker-compose up -d
+      - name: Run tests
+        run: docker-compose exec web rails test
