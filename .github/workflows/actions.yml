@@ -3,13 +3,15 @@ on:
   push:
     branches: [ primary, updates, testing ]
 jobs:
-  build:
-    name: Build
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Docker Compose Up
-        run: docker-compose up -d
+      - name: Start containers
+        run: docker-compose up
       - name: Run tests
-        run: docker run web rails test
+        run: docker-compose exec web bin/rails test
+      - name: Stop containers
+        run: docker-compose down
