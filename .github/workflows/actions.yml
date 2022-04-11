@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Start containers
-        run: docker-compose up -d
+      - name: Build containers
+        run: docker-compose build
       - name: Run tests
         run: docker-compose run web exec bin/rails test
       - name: Stop containers
