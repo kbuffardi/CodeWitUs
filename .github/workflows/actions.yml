@@ -12,4 +12,4 @@ jobs:
       - name: Docker Compose Up
         run: docker-compose up -d
       - name: Run tests
-        run: docker-compose exec web rails test
+        run: docker-compose exec -T web rails test
