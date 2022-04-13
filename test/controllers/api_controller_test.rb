@@ -1,12 +1,20 @@
 require 'test_helper'
 
 class ApiControllerTest < ActionDispatch::IntegrationTest
-#  test "url should return" do
-#    get getInterest_url
-#    expect(response.status).to eq 500
-#  end
-#  test "new interest url should return 500" do
-#    get newInterest_url
-#    expect(response.status).to eq 500
-#  end
+  test "incorrect url" do
+    get '/incorrect'
+    #:redirect - Status code was in the 300-399 range
+    assert_response :redirect
+  end
+  test "interst URL" do
+    post '/interest'
+    #:redirect - Status code was in the 300-399 range
+    assert_response :redirect
+  end
+  test "interst URL" do
+    get '/interest'
+    #:redirect - Status code was in the 300-399 range
+    assert_response :redirect
+  end
+  
 end

@@ -1,9 +1,142 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: 
-  video_id: MyString
-
+  user: 1
+  video_id: "BVK6rCz_7SQ"
+  vtitle: "Variables in C++ for Soccer Players"
+  concepts: 1
+  interests: 11
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/955/practice"
 two:
-  user: 
-  video_id: MyString
+  user: 1
+  video_id: "APtxCYdcNcQ"
+  vtitle: "Variables in C++ for Constellations"
+  concepts: 1
+  interests: 1
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/955/practice"
+three:
+  user: 1
+  video_id: "Z8m1l8_7uS4"
+  vtitle: "Boolean operators in C++ for Loggin In"
+  concepts: 2
+  interests: 2
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1451/practice"
+three:
+  user: 1
+  video_id: "aWmnyZ4lg6s"
+  vtitle: "Conditions in C++ to Dress for the Weather"
+  concepts: 2
+  interests: 11
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1451/practice"
+four:
+  user: 1
+  video_id: "NNOEIsJGaSU"
+  vtitle: "While loops in C++ for an Energy-Saving Thermostat"
+  concepts: 3
+  interests: 12
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1469/practice"
+five:
+  user: 1
+  video_id: "gmv6vYVZlZA"
+  vtitle: "For loops in C++ for Greetings"
+  concepts: 4
+  interests: 10
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1510/practice"
+six:
+  user: 1
+  video_id: "LlqCZMRbHxY"
+  vtitle: "For loops with Vectors in C++ for Workout Routines"
+  concepts: 4
+  interests: 11
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1510/practice"
+seven:
+  user: 1
+  video_id: "sxPAo2A969E"
+  vtitle: "Switch statements in C++ for Horoscopes"
+  concepts: 5
+  interests: 12
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1486/practice"
+eight:
+  user: 1
+  video_id: "6NqVry3dAoQ"
+  vtitle: "Vectors in C++ for a Task list"
+  concepts: 6
+  interests: 16
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1058/practice"
+nine:
+  user: 1
+  video_id: "9rCRzRa66Is"
+  vtitle: "Vectors in C++ for a Workout Routine"
+  concepts: 6
+  interests: 11
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1058/practice"
+ten:
+  user: 1
+  video_id: "au7BFUgcEKE"
+  vtitle: "Arrays in C++ for a Grocery List"
+  concepts: 9
+  interests: 13
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1054/practice"
+eleven:
+  user: 1
+  video_id: "i-JwayqWGR8"
+  vtitle: "Functions in C++ to Order Fast Food"
+  concepts: 7
+  interests: 16
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1089/practice"
+twelve:
+  user: 1
+  video_id: "AQTh0a2k9Hk"
+  vtitle: "Functions in C++ for Grocery Shopping"
+  concepts: 7
+  interests: 13
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1089/practice"
+thirteen:
+  user: 1
+  video_id: "owLNe8Sj7kg"
+  vtitle: "Function Parameters in C++ for Editing Documents"
+  concepts: 8
+  interests: 16
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1104/practice"
+fourteen:
+  user: 1
+  video_id: "hFmOhtavAbM"
+  vtitle: "Function Parameters in C++ for Borrowing Cars"
+  concepts: 8
+  interests: 4
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1104/practice"
+fifteen:
+  user: 1
+  video_id: "be71kVpAPds"
+  vtitle: "Function Parameters in C++ for Updating Vectors"
+  concepts: 8
+  interests: 1
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1104/practice"
+sixteen:
+  user: 1
+  video_id: "YGj-HgRFOk0"
+  vtitle: "Pointers Parameters in C++ for Recipes"
+  concepts: 10
+  interests: 13
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1531/practice"
+seventeen:
+  user: 1
+  video_id: "uCoPsYcMWmU"
+  vtitle: "Structs in C++ for Apartments"
+  concepts: 11
+  interests: 16
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1114/practice"
+eighteen:
+  user: 1
+  video_id: "KCFYYjVIjlk"
+  vtitle: "Structs in C++ for Superheroes"
+  concepts: 11
+  interests: 8
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1114/practice"
+nineteen:
+  user: 1
+  video_id: "1x2MpDnY2Yw"
+  vtitle: "Classes in C++ for Video Streams"
+  concepts: 12
+  interests: 2
+  cwlink: "https://codeworkout.cs.vt.edu/gym/workouts/1116/practice"

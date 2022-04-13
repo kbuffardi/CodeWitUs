@@ -1,7 +1,37 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+variables:
+  id: 1
+  name: "Variables"
+conditions:
+  id: 2
+  name: "Conditions"
+while_loops:
+  id: 3
+  name: "While loops"
+for_loops:
+  id: 4
+  name: "For loops"
+switch_statements:
+  id: 5
+  name: "Switch statements"
+vectors:
+  id: 6
+  name: "Vectors"
+functions:
+  id: 7
+  name: "Functions"
+function_parameters:
+  id: 8
+  name: "Function parameters"
+arrays:
+  id: 9
+  name: "Arrays"
+pointers:
+  id: 10
+  name: "Pointers"
+structs:
+  id: 11
+  name: "Structs"
+classes:
+  id: 12
+  name: "Classes"
