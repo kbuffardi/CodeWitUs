@@ -6,12 +6,12 @@ class ApiControllerTest < ActionDispatch::IntegrationTest
     #:redirect - Status code was in the 300-399 range
     assert_response :redirect
   end
-  test "interst URL" do
+  test "interest URL" do
     post '/interest'
     #:redirect - Status code was in the 300-399 range
     assert_response :redirect
   end
-  test "interst URL" do
+  test "get interest URL" do
     get '/interest'
     #:redirect - Status code was in the 300-399 range
     assert_response :redirect
