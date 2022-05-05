@@ -1,20 +1,10 @@
 require 'test_helper'
 
 class ApiControllerTest < ActionDispatch::IntegrationTest
-  test "incorrect url" do
-    get '/incorrect'
-    #:redirect - Status code was in the 300-399 range
-    assert_response :redirect
-  end
+  #fix this test
   test "interest URL" do
     post '/interest'
     #:redirect - Status code was in the 300-399 range
-    assert_response :redirect
+    assert_response :success
   end
-  test "get interest URL" do
-    get '/interest'
-    #:redirect - Status code was in the 300-399 range
-    assert_response :redirect
-  end
-  
 end
